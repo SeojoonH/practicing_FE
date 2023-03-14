@@ -1,9 +1,11 @@
+/* header area*/
 .header_area {
   margin: 0 auto;
   width: 1280px;
 }
-/* header area*/
 
+
+/* header top area */
 .header_top {
   width: 100%;
   height: 30px;
@@ -24,8 +26,11 @@
 .top_link {
   font-size: 12px;
 }
-/* header top area */
 
+
+/* header main 영역, 
+  로고 영역,
+  브랜드 이미지로 변경 가능 */
 .main_inner {
   display: flex;
   margin-top: 30px;
@@ -41,10 +46,9 @@
   font-weight: 900;
   font-style: oblique;
 }
-/* header main 영역, 
-  로고 영역,
-  브랜드 이미지로 변경 가능 */
 
+
+/* main area menu */
 .main_list {
   width: 100%;
   display: flex;
@@ -64,10 +68,13 @@
 .main_first {
   font-weight: 600;
 }
-/* main area menu */
 
+
+
+/* tab area */
 .tab_inner {
   margin-top: 40px;
+  height: 40px;
 }
 
 .tab_list {
@@ -94,4 +101,67 @@
   color: var(--color-red);
   font-weight: 700;
   font-size: 10px;
+}
+
+
+/* slide show */
+.slide_wrapper {
+  position: relative; /* pager를 배치하기 위해 */
+  overflow: hidden; /* 넘치는 이미지 안 보이기 위해 */
+}
+
+.slide_wrapper ul {
+  height: 600px;
+  position: relative;
+}
+
+.slide_wrapper ul li { /* ul 안에 각각의 슬라이드를 절대값으로 배치 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--color-blue-bright);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide_wrapper ul li h2 {
+  font-size: 6em;
+  text-transform: uppercase;
+}
+
+/* .slide_wrapper ul li:nth-child(1){
+  left: 0%;
+}
+
+.slide_wrapper ul li:nth-child(2){
+  left: 100%;
+}
+
+.slide_wrapper ul li:nth-child(3){
+  left: 200%;
+} */
+
+.slide_wrapper .pager {  /* 슬라이드 갯수에 따라 pager도 생성*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  z-index: 1; /* html에서 슬라이드보다 앞에 입력해 덮이기 때문에 z-index 설정해 줘야 함, 안 쓰게 되면 안 보임 */
+}
+
+.slide_wrapper .pager a{
+  width: 15px;
+  height: 15px;
+  background-color: var(--color-white);
+  display: flex;
+  border-radius: 50%;
+  text-indent: -9999em;
+}
+
+.slide_wrapper .pager a.active {
+  background-color: var(--color-black);
 }
