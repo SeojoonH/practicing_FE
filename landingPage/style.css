@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  font-size: 10rem;
+}
+
+.lg-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sm-text {
+  font-size: 1.5rem;
+}
+
+#dynamic {
+  position: relative;
+  display: inline-block; 
+  /* p 태그가 최소 기본 고정 298px 유지하기 때문에 커서 위치가 아래 after right:0 값에 고정됨. 그래서 inline 성격도 갖게 하기 위해 inline-block을 선택함 */
+}
+
+#dynamic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;  /* 글자와 커서 간격 만들기 위해 값 조정 */
+  width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+#dynamic.active::after {
+  display: none;   /* none을 하면 보이지 않음. */
+}
